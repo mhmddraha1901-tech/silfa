@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii CV - Silfa Aprilyanti</title>
+    <!-- Import Font Lucu dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-soft: #ffdee9;
+            --pink-dark: #ffafcc;
+            --purple-soft: #bde0fe;
+            --yellow-soft: #fffffc;
+            --text-color: #5d5d5d;
+            --accent-color: #fb6f92;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--pink-soft) 0%, var(--purple-soft) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Background Floating Shapes */
+        .shape {
+            position: fixed;
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Container Utama */
+        .cv-card {
+            background: rgba(255, 255, 255, 0.9);
+            width: 100%;
+            max-width: 800px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 175, 204, 0.3);
+            overflow: hidden;
+            border: 5px solid white;
+            animation: slideUp 0.8s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header / Profile Section */
+        .header {
+            background-color: var(--pink-dark);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 8px solid white;
+            margin-bottom: 15px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-weight: 600;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .content { grid-template-columns: 1fr; }
+        }
+
+        .section {
+            background: var(--yellow-soft);
+            padding: 20px;
+            border-radius: 20px;
+            border-bottom: 4px solid var(--pink-dark);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            font-family: 'Pacifico', cursive;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: '🌸';
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        /* Skill Pills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: var(--purple-soft);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #4a90e2;
+        }
+
+        /* Footer / Contact */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff4d6d;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--pink-soft);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--pink-dark);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Shapes for Background Decor -->
+    <div class="shape" style="top: 10%; left: 5%; font-size: 50px;">☁️</div>
+    <div class="shape" style="top: 20%; right: 10%; font-size: 40px; animation-delay: 2s;">✨</div>
+    <div class="shape" style="bottom: 15%; left: 15%; font-size: 45px; animation-delay: 4s;">🍭</div>
+    <div class="shape" style="bottom: 10%; right: 5%; font-size: 35px; animation-delay: 1s;">🌈</div>
+
+    <div class="cv-card">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="WhatsApp Image 2026-02-08 at 18.08.38.jpeg" alt="Profile Picture" class="profile-img">
+            <h1>Halo, Saya Silfa!</h1>
+            <p>Pelajar & Calon Chef Hebat 👩‍🍳</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            
+            <!-- Tentang Saya -->
+            <div class="section">
+                <h2>Tentang Saya</h2>
+                <p>Halo! Nama saya <strong>Silfa Aprilyanti</strong>. Saya lahir pada 11 April 2008. Saya tinggal di Kp. Ciputat RT 03/06, Kel. Andir, Kec. Baleendah. Saya adalah pribadi yang ceria dan sangat suka berbelanja!</p>
+            </div>
+
+            <!-- Pendidikan -->
+            <div class="section">
+                <h2>Pendidikan</h2>
+                <ul>
+                    <li><strong>SMA KP BE</strong><br>Baleendah, Bandung</li>
+                </ul>
+            </div>
+
+            <!-- Pengalaman -->
+            <div class="section">
+                <h2>Pengalaman</h2>
+                <ul>
+                    <li><strong>Anggota Pramuka</strong><br>Aktif dalam kegiatan kepramukaan dan pengembangan karakter.</li>
+                </ul>
+            </div>
+
+            <!-- Keahlian & Bahasa -->
+            <div class="section">
+                <h2>Keahlian</h2>
+                <div class="skills-container" style="margin-bottom: 15px;">
+                    <span class="skill-badge">Memasak</span>
+                    <span class="skill-badge">Bahasa Indonesia</span>
+                </div>
+                <p><strong>Hobby:</strong> Berbelanja 🛍️</p>
+            </div>
+
+        </div>
+
+        <!-- Footer / Contact -->
+        <div class="footer">
+            <div style="margin-bottom: 10px;">
+                <p>📞 083844054372</p>
+                <p>📍 Baleendah, Bandung</p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/april_silva" target="_blank">Instagram: @april_silva</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">Dibuat dengan ✨ untuk Silfa</p>
+        </div>
+    </div>
+
+    <script>
+        // Efek klik pada kartu untuk memunculkan partikel sederhana
+        document.querySelector('.cv-card').addEventListener('click', function(e) {
+            const circle = document.createElement('div');
+            circle.style.position = 'absolute';
+            circle.style.width = '20px';
+            circle.style.height = '20px';
+            circle.style.backgroundColor = 'rgba(255, 175, 204, 0.5)';
+            circle.style.borderRadius = '50%';
+            circle.style.left = (e.clientX - this.offsetLeft) + 'px';
+            circle.style.top = (e.clientY - this.offsetTop) + 'px';
+            circle.style.pointerEvents = 'none';
+            circle.style.transition = 'all 0.5s ease-out';
+            
+            this.appendChild(circle);
+
+            setTimeout(() => {
+                circle.style.transform = 'scale(5)';
+                circle.style.opacity = '0';
+            }, 10);
+
+            setTimeout(() => {
+                circle.remove();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
